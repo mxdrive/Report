@@ -14,7 +14,7 @@ public class Report {
 
     public static void main(String args[]) throws FileNotFoundException, InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "/home/qatester/IdeaProjects/Report/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/qatester/IdeaProjects/Report/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://reports.s-pro.io/auth/login/");
@@ -28,15 +28,15 @@ public class Report {
         driver.findElement(By.cssSelector(".glyphicon.glyphicon-plus")).click();
 //        Thread.sleep(7000);
 
-        String fileName = "/home/qatester/IdeaProjects/Report/report.txt";
+        String fileName = "/Users/qatester/IdeaProjects/Report/report.txt";
         String title = ".//*[@id='app-container']/div/div[3]/form/div[1]/div[4]/div[1]/div[";
         String title2 = "]/div[5]/input";
         String number = ".//*[@id='app-container']/div/div[3]/form/div[1]/div[4]/div[1]/div[";
-        String number2 = "]/div[6]/input";
+        String number2 = "]/div[7]/input";
         String time = ".//*[@id='app-container']/div/div[3]/form/div[1]/div[4]/div[1]/div[";
-        String time2 = "]/div[7]/div/select[2]";
+        String time2 = "]/div[8]/div/select[2]";
         String hour = ".//*[@id='app-container']/div/div[3]/form/div[1]/div[4]/div[1]/div[";
-        String hour2 = "]/div[7]/div/select[1]";
+        String hour2 = "]/div[8]/div/select[1]";
 
         try (
                 InputStream fis = new FileInputStream(fileName);
@@ -65,6 +65,8 @@ public class Report {
                         driver.findElement(By.xpath(time + (i + 1) + time2)).sendKeys(Files.readAllLines(Paths.get(fileName)).get(i).split("}")[2].split("/")[1]);
                         driver.findElement(By.xpath(hour + (i + 1) + hour2)).sendKeys(Files.readAllLines(Paths.get(fileName)).get(i).split("}")[2].split("/")[0]);
                     }
+                    driver.findElements(By.cssSelector(".Select-placeholder")).get(0).click();
+                    driver.findElements(By.cssSelector(".Select-option")).get(0).click();
                     driver.findElements(By.cssSelector(".Select-placeholder")).get(0).click();
                     try {
                         new WebDriverWait(driver, 1).until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(".Select-option"))));
@@ -105,7 +107,15 @@ public class Report {
                                     break;
                                 }
                             }
+                    } else  if (Files.readAllLines(Paths.get(fileName)).get(i).split("}")[0].contains("QBS")) {
+                        for (WebElement e :
+                                driver.findElements(By.cssSelector(".Select-option"))) {
+                            if (e.getText().contains("QR Code")){
+                                e.click();
+                                break;
+                            }
                         }
+                    }
                 }
             }
             driver.findElement(By.xpath(title + (driver.findElements(By.cssSelector(".glyphicon.glyphicon-remove")).size()) + title2)).sendKeys("Exploratory testing");

@@ -1,16 +1,7 @@
-HB-3267}[Profile edit] Phone validation on profile edit page is incorrect}20
-HB-3273}[Contact nodes] Input formatting should be the same on web and mobile}10
-HB-3264}[Functional] App is getting crashed if trying to edit image node with large image}20
-HB-3261}[Edit nodes] File can't be changed while editing - "Empty field" error is happened}10
-HB-3254}[Chats] Attachments from local storage can't be sent to the chat}10
-HB-3251}[Encryption] Local files aren't removed after closing file node preview}10
-HB-3252}[UI / Layout] Image preview section is displayed incorrectly when editing image node}10
-HB-3258}[Chats] Last chat message in chats list is displayed as "No posts" if last chat message had been removed}10
-HB-3262}[Security] XSS injection can be executed in mobile app}30
-HB-3210}[White list SSO] Create White list SSO Toggle}30
-HB-3144}BE: Fix login (if organization without settings)}20
-HB-3190}[HubCom] Chat / Stream message can be sent / received when HubCom option is disabled}10
-HB-3267}[Profile edit] Phone validation on profile edit page is incorrect}10
-BIL-678}On select contact person screen the green + button functionality is not working and looking as it should}10
-BIL-708}[Bills] Bill date can't be changed}10
-BIL-710}[Invoices] Images attached to draft invoice are disappeared from invoice after relogin}10
+HB-3445}[Chats] Chat page is opened when applying chat filter}30
+HB-3753}[Chats] Last chat message on the chats list page is displayed incorrectly if creating new chat}10
+HB-3752}[Notfications] There's no in-app notifications about new chat message, new message counter in the chats list and in the footer aren't changed if receiving new message to recently created direct chat}10
+HB-3759}[Alerts] Notifications about unread alerts are displayed incorrectly if receiving new alert when alerts list page is opened}10
+HB-3646}Add to HubCom Chats filter an ‘unread’ option}10
+HB-3440}[Nodes] App is getting crashed if opening preview for link node with incorrect URL}10
+HB-3534}[Nodes] Link nodes with long links can't be edited}20
