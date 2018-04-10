@@ -1,7 +1,1 @@
-HB-3445}[Chats] Chat page is opened when applying chat filter}30
-HB-3753}[Chats] Last chat message on the chats list page is displayed incorrectly if creating new chat}10
-HB-3752}[Notfications] There's no in-app notifications about new chat message, new message counter in the chats list and in the footer aren't changed if receiving new message to recently created direct chat}10
-HB-3759}[Alerts] Notifications about unread alerts are displayed incorrectly if receiving new alert when alerts list page is opened}10
-HB-3646}Add to HubCom Chats filter an ‘unread’ option}10
-HB-3440}[Nodes] App is getting crashed if opening preview for link node with incorrect URL}10
-HB-3534}[Nodes] Link nodes with long links can't be edited}20
+HB-4319}Enable role chat creation toggle - change functionality}20

@@ -12,21 +12,25 @@ import java.nio.file.Paths;
 
 public class Report {
 
-    public static void main(String args[]) throws FileNotFoundException, InterruptedException {
+    public static void main(String args[]) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "/Users/qatester/IdeaProjects/Report/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/qatester/IdeaProjects/Report/libs/chromedriver");
         WebDriver driver = new ChromeDriver();
+//        System.setProperty("webdriver.gecko.driver", "/Users/qatester/IdeaProjects/Report/libs/geckodriver");
+//        DesiredCapabilities capabilities= DesiredCapabilities.firefox();
+//        capabilities.setCapability("marionette", true);
+//        WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("http://reports.s-pro.io/auth/login/");
         driver.findElement(By.cssSelector("#id_username")).sendKeys("achernenko@s-pro.io");
-        driver.findElement(By.cssSelector("#id_password")).sendKeys("qwerty123");
+        driver.findElement(By.cssSelector("#id_password")).sendKeys("wSP8NPpZ");
         driver.findElement(By.cssSelector("#id_password")).submit();
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".close")));
         driver.findElement(By.cssSelector(".close")).click();
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".glyphicon.glyphicon-plus")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".glyphicon.glyphicon-plus")).click();
-//        Thread.sleep(7000);
+//        Thread.sleep(10000);
 
         String fileName = "/Users/qatester/IdeaProjects/Report/report.txt";
         String title = ".//*[@id='app-container']/div/div[3]/form/div[1]/div[4]/div[1]/div[";
